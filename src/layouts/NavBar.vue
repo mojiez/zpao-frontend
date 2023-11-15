@@ -26,11 +26,15 @@
 <script setup>
 import { ref } from 'vue';
 import { showToast } from 'vant/lib/vant.es';
-
+import {useRouter} from 'vue-router';
+  const router = useRouter();
   const active = ref('home');
   const onClickLeft = () => alert('左');
-  const onClickRight = () => alert('右');
-  
+  // const onClickRight = () => alert('右');
+  const onClickRight = () => {
+    showToast('右')
+    router.push('/search')
+  };
 
 </script>
 
