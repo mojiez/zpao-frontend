@@ -1,23 +1,15 @@
 <template>
     <!-- form表单 完成获取数据并修改 -->
 <van-form @submit="onSubmit">
-  <van-cell-group inset>
+  
     <van-field
-      v-model="edi"
-      name="用户名"
-      label="用户名"
-      placeholder="用户名"
-      :rules="[{ required: true, message: '请填写用户名' }]"
+      v-model="editUser.currentValue"
+      :name="editUser.editName"
+      :label="editUser.editName"
+      :placeholder="`请输入:${editUser.editName}`"
     />
-    <van-field
-      v-model="password"
-      type="password"
-      name="密码"
-      label="密码"
-      placeholder="密码"
-      :rules="[{ required: true, message: '请填写密码' }]"
-    />
-  </van-cell-group>
+    
+  
   <div style="margin: 16px;">
     <van-button round block type="primary" native-type="submit">
       提交
@@ -29,13 +21,18 @@
 
 <script setup>
 import {ref} from 'vue';
-import useRoute from 'vue-router'
+import {useRoute} from 'vue-router';
+
     const route = useRoute();
     const editUser = ref({
         editKey:route.query.editKey,
         editName:route.query.editName,
         currentValue:route.query.currentValue,
-    })
+    });
+    const test1 = "123";
+    const onSubmit = (value) => {
+      console.log("提交"+editUser.value.currentValue);
+    }
 </script>
 
 <style scoped>

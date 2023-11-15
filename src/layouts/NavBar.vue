@@ -29,7 +29,10 @@ import { showToast } from 'vant/lib/vant.es';
 import {useRouter} from 'vue-router';
   const router = useRouter();
   const active = ref('home');
-  const onClickLeft = () => alert('左');
+  const onClickLeft = () => {
+    alert('左');
+    router.back();
+  }
   // const onClickRight = () => alert('右');
   const onClickRight = () => {
     showToast('右')
