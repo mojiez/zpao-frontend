@@ -31,13 +31,18 @@
   :items="tagList"
 />
 
+<div style="padding: 16px">
+  <van-button block type="primary" @click="doSearchResult">搜索</van-button>
+</div>
 </template>
 
 <script setup>
     import {ref} from 'vue';
     // ref用于声明响应式对象 响应式对象的value发生改变后，与之相关的视图会自动更新
     import {showToast} from 'vant/lib/vant.es';
-    
+    import {useRouter} from 'vue-router';
+import routes from '../config/router';
+    const router = useRouter();
     const value = ref('');
     const searchText = ref('');
     const onClickButton = () => showToast(value.value);
@@ -102,6 +107,10 @@
         tagList.value = items;
     };
 
+    const doSearchResult = () => {
+      showToast('展示跳转结果')
+      router.push('/searchresult')
+    }
 </script>
 
 <style scoped>
