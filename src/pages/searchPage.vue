@@ -46,7 +46,7 @@ import routes from '../config/router';
     const value = ref('');
     const searchText = ref('');
     const onClickButton = () => showToast(value.value);
-    
+    // const activeIds = ref([]);
     const close = (tag) => {
         showToast('关闭标签!');
         activeIds.value = activeIds.value.filter(item => {
@@ -109,7 +109,15 @@ import routes from '../config/router';
 
     const doSearchResult = () => {
       showToast('展示跳转结果')
-      router.push('/searchresult')
+
+      // router.push('/searchresult')
+      router.push({
+        path:'/searchresult',
+        query:{
+          // tagList,
+          tags:activeIds.value,
+        },
+      })
     }
 </script>
 

@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import { Button, Icon } from 'vant';
 import { Form, Field, CellGroup } from 'vant';
+import { Card } from 'vant';
 import { NavBar } from 'vant';
 import { Toast } from 'vant';
 import { Tag } from 'vant';
@@ -40,5 +41,6 @@ app.use(Tabbar);
 app.use(TabbarItem);
 app.use(Search);
 app.use(router);
+app.use(Card);
 // app.use(showToast);
 app.mount('#app')
