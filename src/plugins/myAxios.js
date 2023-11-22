@@ -5,6 +5,10 @@ const myAxios = axios.create({
     baseURL: 'http://localhost:8080/api',
 });
 
+// 用于指示是否应该在跨域请求中包含凭据（例如，发送身份验证凭证，如 cookies 或 HTTP 认证）。
+// 后端也要改 domain
+myAxios.defaults.withCredentials = true;
+
 // 添加请求拦截器
 // Add a request interceptor
 myAxios.interceptors.request.use(function (config) {
@@ -17,10 +21,10 @@ myAxios.interceptors.request.use(function (config) {
   });
 
 // Add a response interceptor
-axios.interceptors.response.use(function (response) {
+myAxios.interceptors.response.use(function (response) {
     // Do something with response data
     console.log("请求收到了",response);
-    return response;
+    return response.data;
   }, function (error) {
     // Do something with response error
     return Promise.reject(error);

@@ -13,4 +13,4 @@ type userType = {
     tag: string[];
     createTime: Date;
     profile?:string;
-}
+};
