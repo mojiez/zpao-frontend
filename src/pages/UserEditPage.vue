@@ -54,7 +54,7 @@ import {showToast,showFailToast,showSuccessToast} from 'vant/lib/vant.es';
 
         // TODO 只传过去一个id role 其他的值都是null 无权限 TODO
         'id':currentUser.id,
-        [editUser.value.editKey]:editUser.value.currentUser,
+        [editUser.value.editKey]:editUser.value.currentValue,
       })
       if(res.code === 0 && res.data >0){
         showSuccessToast('修改成功');
