@@ -56,6 +56,7 @@ import {showToast,showFailToast,showSuccessToast} from 'vant/lib/vant.es';
         'id':currentUser.id,
         [editUser.value.editKey]:editUser.value.currentValue,
       })
+      
       if(res.code === 0 && res.data >0){
         showSuccessToast('修改成功');
         router.back();

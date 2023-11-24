@@ -1,5 +1,6 @@
 <template>
-    <van-card v-for="user in userList"
+<!-- <van-card v-for="user in userList" -->
+    <van-card v-for="user in mockUser"
     :desc="user.profile"
     :title='`${user.userName}(${user.role})`'
     :thumb="user.avatarUrl"
@@ -77,7 +78,7 @@ import { onMounted, onUpdated, onUnmounted } from 'vue'
     // const {tags} = route.query;
     const tags = ["java","python"];
 
-    const mockUser = ref({
+    const mockUser = ref([{
     id: 931,
     username: '沙鱼',
     userAccount: 'shayu',
@@ -89,7 +90,7 @@ import { onMounted, onUpdated, onUnmounted } from 'vue'
     avatarUrl: 'https://th.bing.com/th/id/OIP.jfY4nQPLuqb-gEi62_zobgAAAA?rs=1&pid=ImgDetMain',
     tags: ['java', 'emo', '打工中', 'emo', '打工中'],
     createTime: new Date(),
-    })
+    }])
 
     
 
