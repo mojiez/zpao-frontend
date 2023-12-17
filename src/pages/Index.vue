@@ -26,13 +26,17 @@ import {showToast,showFailToast,showSuccessToast} from 'vant/lib/vant.es';
     const userList = ref([]);
     onMounted(async() => {
         const list = await myAxios.get('/user/recommend',{
-            withCredentials:false,
-            
+            // 允许跨域携带cookie信息
+            withCredentials:true,
+            params: {
+                pageNum: 1,
+                pageSize: 6,
+            }
         })
         .then(response => {
             console.log('/user/recommend success',response);
             showSuccessToast('获取推荐成功');
-            return response?.data;
+            return response?.data?.records;
         })
         .catch( error => {
             console.log('/user/recommend failed',error);

@@ -12,6 +12,7 @@
 
   <div id="content">
     <router-view></router-view>
+    
   </div>
 
   <van-tabbar route>
@@ -19,7 +20,7 @@
   <van-tabbar-item name="user" icon="search" replace to="/user">用户页</van-tabbar-item>
   <van-tabbar-item name="friends" icon="friends-o" replace to="/team">队伍页</van-tabbar-item>
   <!-- <van-tabbar-item name="setting" icon="setting-o">标签</van-tabbar-item> -->
-</van-tabbar>
+  </van-tabbar>
 
 </template>
 
@@ -42,5 +43,7 @@ import {useRouter} from 'vue-router';
 </script>
 
 <style scoped>
-
+  #content{
+    padding-bottom: 200px;
+  }
 </style>
