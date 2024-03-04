@@ -15,6 +15,7 @@ import Search from 'vant';
 import { Divider } from 'vant';
 import { TreeSelect } from 'vant';
 import { Col, Row } from 'vant';
+import { Skeleton } from 'vant';
 // import { Form, Field, CellGroup } from 'vant';
 import 'vant/lib/index.css'
 const app = createApp(App);
@@ -36,6 +37,7 @@ app.use(Field);
 app.use(CellGroup);
 app.use(NavBar);
 app.use(Icon);
+app.use(Skeleton);
 app.use(Toast);
 app.use(Tabbar);
 app.use(TabbarItem);
