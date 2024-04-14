@@ -30,8 +30,9 @@ myAxios.interceptors.response.use(function (response) {
     // 如果收到的reponse.data.code 是40101 说明当前没有登陆
     // 强制跳转到登录页面
     if(response?.data?.code === 40101) {
-      // todo 为什么会有一个#号
-      window.location.href = '/#/login' 
+      // todo 为什么会有一个#号 —— 这是哈希路由的方式 所以会出现这种问题
+      const redirectUrl = window.location.href;
+      window.location.href = `/login?redirect=${redirectUrl}`; 
     }
     return response.data;
   }, function (error) {

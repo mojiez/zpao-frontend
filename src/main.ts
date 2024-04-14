@@ -18,10 +18,13 @@ import { Col, Row } from 'vant';
 import { Skeleton } from 'vant';
 // import { Form, Field, CellGroup } from 'vant';
 import 'vant/lib/index.css'
+import './global.css'
 const app = createApp(App);
 // const app = createApp();
 const router = VueRouter.createRouter({
-    history:VueRouter.createWebHashHistory(),
+    // 这里设置 路由的模式 哈希路由就是带一个#号的
+    // history:VueRouter.createWebHashHistory(),
+    history:VueRouter.createWebHistory(),
     routes:routes,
 })
 // 引入vue-router的组件
